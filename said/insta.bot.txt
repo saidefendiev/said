@@ -1,0 +1,15 @@
+from instapy import InstaPy
+from selenium import webdriver
+
+session = InstaPy(username = "****", password = "********")
+session.login()
+
+session.set_relationship_bounds(enabled = True, max_followers = 300)
+
+session.set_do_follow(True, percentage = 100)
+
+session.set_dont_like(["18+"])
+
+session.like_by_tags(["diy", "bmw", "UFC"], amount = 5)
+
+session.end()
